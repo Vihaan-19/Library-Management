@@ -19,6 +19,6 @@ const auth = async (req, res, next) => {
 }
 
 router.post('/issue/:bookId',userController.issue);
-router.delete('/view/:bookId',auth, userController.viewBook);
+router.get('/view/:bookId',auth, userController.viewBook);
 
 module.exports = router;

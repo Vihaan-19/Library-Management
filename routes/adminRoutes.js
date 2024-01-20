@@ -44,7 +44,9 @@ const isAdmin = async (req, res, next) => {
 
 router.post('/add', auth, isAdmin, adminController.addBook);
 router.post('/update/:bookId', auth, isAdmin, adminController.updateBook);
+router.post('/return/:userId/:bookId',auth,isAdmin,adminController.returnBook);
 router.get('/view/:userId', auth, isAdmin, adminController.viewUserBooks);
+router.get('/view/book/:bookId', auth, isAdmin, adminController.viewBook);
 router.delete('/delete/:bookId', auth, isAdmin, adminController.deleteBook);
 
 module.exports = router;
